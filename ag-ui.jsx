@@ -9,6 +9,9 @@ const GAMES_DATA = [
   { id:'tetris',     title:'Tetris',         cat:'puzzle',    catLabel:'Puzzle',     emoji:'🟦', bg:'#0d1e2d', accent:'#06b6d4', plays:'8.1M', rating:5.0, desc:'El legendario juego de bloques que cae. ¡Completa líneas!' },
   { id:'pong',       title:'Pong',           cat:'arcade',    catLabel:'Arcade',     emoji:'🏓', bg:'#1a1030', accent:'#f0abfc', plays:'4.7M', rating:4.8, desc:'El primer videojuego de la historia. Primero en llegar a 5 gana' },
   { id:'space',      title:'Space Invaders', cat:'action',    catLabel:'Acción',     emoji:'👾', bg:'#0a0a20', accent:'#818cf8', plays:'6.3M', rating:4.9, desc:'Defiende la Tierra de las oleadas de alienígenas invasores' },
+  { id:'gta_augusto',       title:'GTA Augusto',       cat:'action',   catLabel:'Acción',     emoji:'🚗', bg:'#2d0d1a', accent:'#a855f7', plays:'9.9M', rating:5.0, desc:'Augusto recorre la ciudad esquivando tráfico y la policía, recolectando billetes' },
+  { id:'minecraft_augusto', title:'Minecraft Augusto', cat:'puzzle',   catLabel:'Puzzle',     emoji:'⛏️', bg:'#0d2d1a', accent:'#22c55e', plays:'7.5M', rating:4.9, desc:'Mina bloques, colecciona recursos y construye en el mundo de Augusto' },
+  { id:'wwe_augusto',       title:'WWE Augusto',       cat:'action',   catLabel:'Acción',     emoji:'🤼', bg:'#2d1a0d', accent:'#ef4444', plays:'6.6M', rating:4.8, desc:'Augusto sube al ring y derrota a los luchadores con su Stunner final' },
 ];
 
 const CATEGORIES = [

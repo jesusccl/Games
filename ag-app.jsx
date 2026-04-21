@@ -1,13 +1,16 @@
 const GAME_COMPONENTS = {
-  snake:     () => <SnakeGame />,
-  memory:    () => <MemoryGame />,
-  tictactoe: () => <TicTacToeGame />,
-  bricks:    () => <BrickBreakerGame />,
-  game2048:  () => <Game2048 />,
-  wham:      () => <WhackAMole />,
-  tetris:    () => <TetrisGame />,
-  pong:      () => <PongGame />,
-  space:     () => <SpaceInvaders />,
+  snake:              () => <SnakeGame />,
+  memory:             () => <MemoryGame />,
+  tictactoe:          () => <TicTacToeGame />,
+  bricks:             () => <BrickBreakerGame />,
+  game2048:           () => <Game2048 />,
+  wham:               () => <WhackAMole />,
+  tetris:             () => <TetrisGame />,
+  pong:               () => <PongGame />,
+  space:              () => <SpaceInvaders />,
+  gta_augusto:        () => <GTAAugustoGame />,
+  minecraft_augusto:  () => <MinecraftAugustoGame />,
+  wwe_augusto:        () => <WWEAugustoGame />,
 };
 
 function GameModal({ game, onClose, onScore }) {
