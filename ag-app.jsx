@@ -15,6 +15,7 @@ const GAME_COMPONENTS = {
 
 function GameModal({ game, onClose, onScore }) {
   const GameComp = GAME_COMPONENTS[game.id];
+  const isIframeGame = ['gta_augusto','minecraft_augusto','wwe_augusto'].includes(game.id);
 
   React.useEffect(() => {
     // Listen for score events from games
@@ -87,7 +88,8 @@ function GameModal({ game, onClose, onScore }) {
       {/* Game area */}
       <div style={{
         background:'var(--surface)', border:'1px solid var(--border)',
-        borderRadius:20, padding:'28px 20px',
+        borderRadius:20,
+        padding: isIframeGame ? '10px' : '28px 20px',
         boxShadow:`0 0 80px ${game.accent}18, 0 24px 80px rgba(0,0,0,0.6)`,
         maxWidth:960, width:'100%',
       }}>
@@ -144,6 +146,19 @@ function App() {
     if (game) setToast({ score, game });
     window.dispatchEvent(new Event('ag_profile_update'));
   }, []);
+
+  // Listen to postMessage from iframe-based games (Augusto City / Minecraft / WWE)
+  React.useEffect(() => {
+    const onMsg = (e) => {
+      const d = e.data;
+      if (!d || d.type !== 'ag_score' || !d.game) return;
+      const s = parseInt(d.score, 10);
+      if (!isFinite(s) || s <= 0) return;
+      handleScore(d.game, s);
+    };
+    window.addEventListener('message', onMsg);
+    return () => window.removeEventListener('message', onMsg);
+  }, [handleScore]);
 
   return (
     <>
